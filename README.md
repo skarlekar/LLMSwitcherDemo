@@ -95,3 +95,51 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact Information
 For questions or support, please contact [skarlekar@yahoo.com](mailto:skarlekar@yahoo.com).
+
+## Docker Usage
+
+### Building the Docker Image
+To build the Docker image, run the following command in the project directory:
+
+```bash
+docker build -t llm-switcher-demo .
+```
+
+### Running the Docker Container
+To run the application in a Docker container, use:
+
+```bash
+docker run -p 8501:8501 \
+  -e OPENAI_API_KEY=your_openai_key \
+  -e ANTHROPIC_API_KEY=your_anthropic_key \
+  -e HUGGINGFACE_API_KEY=your_huggingface_key \
+  -e FIREWORKS_API_KEY=your_fireworks_key \
+  llm-switcher-demo
+```
+
+Replace `your_*_key` with your actual API keys.
+
+After running this command, you should be able to access the Streamlit application by navigating to `http://localhost:8501` in your web browser.
+
+### Troubleshooting Docker Issues
+If you encounter issues accessing the Streamlit application:
+
+1. Ensure the container is running:
+   ```bash
+   docker ps
+   ```
+   You should see your container listed.
+
+2. Check the container logs:
+   ```bash
+   docker logs <container_id>
+   ```
+   Look for any error messages or indications that Streamlit failed to start.
+
+3. Verify that port 8501 is not being used by another application on your host machine.
+
+4. If you're using Docker Desktop, ensure that the "Use Docker Compose V2" option is enabled in the settings.
+
+5. Try accessing the application using `http://127.0.0.1:8501` instead of `localhost`.
+
+If you continue to experience issues, please check your firewall settings and ensure that Docker has the necessary permissions to bind to ports on your system.
