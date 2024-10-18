@@ -78,7 +78,7 @@ The LLM Switcher Demo is a quick demonstration of how to switch between differen
 
 ## FAQ
 **Q: Can I add more LLM providers?**  
-A: Yes, you can extend the scripts to include additional LLMs supported by LangChain.
+A: Yes, you can extend the scripts to include additional LLMs supported by LangChain. Simply add the new LLM to the `create_llm` function in `choosellm.py`. See the LangChain documentation for details on how to add new LLMs: https://python.langchain.com/docs/integrations/chat/
 
 **Q: How do I change the default question?**  
 A: Modify the `question` variable in `callall.py` or the default value in the Streamlit text area in `choosellm.py`.
