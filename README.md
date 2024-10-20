@@ -98,8 +98,14 @@ For questions or support, please contact [skarlekar@yahoo.com](mailto:skarlekar@
 
 ## Docker Usage
 
+### Pulling the Docker Image from Docker Hub
+
+```bash
+docker pull skarlekar/llmswitcher
+```
+
 ### Building the Docker Image
-To build the Docker image, run the following command in the project directory:
+If you choose to build the image yourself, run the following command in the project directory:
 
 ```bash
 docker build -t llm-switcher-demo .
